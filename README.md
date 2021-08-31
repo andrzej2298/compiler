@@ -1,3 +1,8 @@
+# Language
+
+Take a look at the tests to see examples
+of valid and invalid programs.
+
 # Running the compiler
 
 Use the Makefile to compile the compiler.
@@ -8,8 +13,6 @@ Sample usage:
     ./latc tests/good/core001.lat
     lli tests/good/core001.bc  # run the bytecode
     cat tests/good/core001.ll  # inspect the LLVM IR
-
-
 
 # Directory structure
 
