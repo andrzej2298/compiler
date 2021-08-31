@@ -1,0 +1,13 @@
+#!/bin/bash
+
+./src/Compiler "$@"
+
+if [ $? -eq 0 ]
+then
+    OUTFILE="${1%.*}.ll"
+    OBJFILE="${1%.*}.bc"
+    llvm-as "$OUTFILE" -o "$OBJFILE"
+    llvm-link "$OBJFILE" lib/runtime.bc -o "$OBJFILE"
+else
+    exit 1
+fi
